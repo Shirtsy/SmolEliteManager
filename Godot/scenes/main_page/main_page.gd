@@ -1,13 +1,10 @@
 extends Control
 
 
-@export var url: String:
-	get:
-		assert(url, "This property cannot be null.")
-		return url
-
 @onready var http: HTTPRequest = $HTTPRequest
 @onready var request_timer: Timer = $RequestTimer
+
+var url: String = GlobalData.get_backend_url()
 
 
 func _ready() -> void:

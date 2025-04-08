@@ -18,6 +18,10 @@ boot_splash/image="uid://d144oslm40m4d"
 config/icon="res://icon.svg"
 boot_splash/minimum_display_time=1000
 
+[autoload]
+
+GlobalData="*res://autoloads/global_data/global_data.gd"
+
 [debug]
 
 gdscript/warnings/untyped_declaration=2
