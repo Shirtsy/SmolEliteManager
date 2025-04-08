@@ -1,6 +1,6 @@
 var app = WebApplication.Create();
 app.UseHttpsRedirection();
-app.UseDefaultFiles("/Export/index.html");
+app.UseDefaultFiles();
 app.UseStaticFiles(new StaticFileOptions { ServeUnknownFileTypes = true });
 
 app.MapGet("/weatherforecast", () =>

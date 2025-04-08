@@ -11,15 +11,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\Export\index.html" />
-    <None Include="wwwroot\Export\SmolEliteManager.apple-touch-icon.png" />
-    <None Include="wwwroot\Export\SmolEliteManager.audio.position.worklet.js" />
-    <None Include="wwwroot\Export\SmolEliteManager.audio.worklet.js" />
-    <None Include="wwwroot\Export\SmolEliteManager.icon.png" />
-    <None Include="wwwroot\Export\SmolEliteManager.js" />
-    <None Include="wwwroot\Export\SmolEliteManager.pck" />
-    <None Include="wwwroot\Export\SmolEliteManager.png" />
-    <None Include="wwwroot\Export\SmolEliteManager.wasm" />
+    <None Include="wwwroot\index.html" />
+    <None Include="wwwroot\SmolEliteManager.apple-touch-icon.png" />
+    <None Include="wwwroot\SmolEliteManager.audio.position.worklet.js" />
+    <None Include="wwwroot\SmolEliteManager.audio.worklet.js" />
+    <None Include="wwwroot\SmolEliteManager.icon.png" />
+    <None Include="wwwroot\SmolEliteManager.js" />
+    <None Include="wwwroot\SmolEliteManager.pck" />
+    <None Include="wwwroot\SmolEliteManager.png" />
+    <None Include="wwwroot\SmolEliteManager.wasm" />
   </ItemGroup>
 
 </Project>
