@@ -1,0 +1,84 @@
+[gd_scene load_steps=2 format=3 uid="uid://ir8ypkrvvjis"]
+
+[ext_resource type="Script" uid="uid://8yfkioj6dgt3" path="res://scenes/main_page/main_page.gd" id="1_xwq8t"]
+
+[node name="MainPage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xwq8t")
+url = "https://localhost:7023/weatherforecast"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="RequestTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="Margin"]
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="Margin/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBox" type="HBoxContainer" parent="Margin/Panel/Margin"]
+layout_mode = 2
+
+[node name="Scroll" type="ScrollContainer" parent="Margin/Panel/Margin/HBox"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Margin/Panel/Margin/HBox/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Margin/Panel/Margin/HBox/Scroll/VBox"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Button!"
+
+[node name="Button2" type="Button" parent="Margin/Panel/Margin/HBox/Scroll/VBox"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Another!"
+
+[node name="VSeparator" type="VSeparator" parent="Margin/Panel/Margin/HBox"]
+layout_mode = 2
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="Margin/Panel/Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Margin/Panel/Margin/HBox/ScrollContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Margin/Panel/Margin/HBox/ScrollContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Test Text!"
+
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
+[connection signal="timeout" from="RequestTimer" to="." method="_on_request_timer_timeout"]
