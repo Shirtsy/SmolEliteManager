@@ -10,4 +10,16 @@
     <Folder Include="Godot\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Export\index.html" />
+    <None Include="wwwroot\Export\SmolEliteManager.apple-touch-icon.png" />
+    <None Include="wwwroot\Export\SmolEliteManager.audio.position.worklet.js" />
+    <None Include="wwwroot\Export\SmolEliteManager.audio.worklet.js" />
+    <None Include="wwwroot\Export\SmolEliteManager.icon.png" />
+    <None Include="wwwroot\Export\SmolEliteManager.js" />
+    <None Include="wwwroot\Export\SmolEliteManager.pck" />
+    <None Include="wwwroot\Export\SmolEliteManager.png" />
+    <None Include="wwwroot\Export\SmolEliteManager.wasm" />
+  </ItemGroup>
+
 </Project>

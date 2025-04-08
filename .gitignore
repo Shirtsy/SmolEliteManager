@@ -365,7 +365,7 @@ FodyWeavers.xsd
 
 # Godot 4+ specific ignores
 .godot/
-Export/
+wwwroot/
 
 # Godot-specific ignores
 .import/

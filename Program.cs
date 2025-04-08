@@ -1,12 +1,7 @@
-var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-
+var app = WebApplication.Create();
 app.UseHttpsRedirection();
+app.UseDefaultFiles("/Export/index.html");
+app.UseStaticFiles(new StaticFileOptions { ServeUnknownFileTypes = true });
 
 app.MapGet("/weatherforecast", () =>
 {
