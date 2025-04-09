@@ -6,6 +6,7 @@ func get_backend_url() -> String:
 	if OS.has_feature("web"):
 		print_debug("Web version detected")
 		url = "https://" + JavaScriptBridge.eval("window.location.host;")
+		print_debug(url)
 	else:
 		print_debug("Web version not detected")
 		url = "https://localhost:7023"

@@ -8,18 +8,7 @@
 
   <ItemGroup>
     <Folder Include="Godot\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\index.html" />
-    <None Include="wwwroot\SmolEliteManager.apple-touch-icon.png" />
-    <None Include="wwwroot\SmolEliteManager.audio.position.worklet.js" />
-    <None Include="wwwroot\SmolEliteManager.audio.worklet.js" />
-    <None Include="wwwroot\SmolEliteManager.icon.png" />
-    <None Include="wwwroot\SmolEliteManager.js" />
-    <None Include="wwwroot\SmolEliteManager.pck" />
-    <None Include="wwwroot\SmolEliteManager.png" />
-    <None Include="wwwroot\SmolEliteManager.wasm" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 </Project>

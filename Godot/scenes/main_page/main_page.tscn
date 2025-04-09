@@ -65,6 +65,11 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Another!"
 
+[node name="Button3" type="Button" parent="Margin/Panel/Margin/HBox/Scroll/VBox"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Another!"
+
 [node name="VSeparator" type="VSeparator" parent="Margin/Panel/Margin/HBox"]
 layout_mode = 2
 
