@@ -4,16 +4,20 @@ app.UseDefaultFiles();
 app.UseStaticFiles(new StaticFileOptions { ServeUnknownFileTypes = true });
 
 app.MapGet("/weatherforecast", () =>
-{
-    var forecast =
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now),
-            Random.Shared.Next(-20, 55),
-            "Text"
-        );
-    return forecast;
-});
+    new WeatherForecast(
+        DateOnly.FromDateTime(DateTime.Now),
+        Random.Shared.Next(-20, 55),
+        "Text"
+    )
+);
+
+app.MapGet("market", () =>
+    EliteDataHandler.SerializeDocuments(EliteDataHandler.MarketData)
+);
+
+app.MapGet("outfitting", () =>
+    EliteDataHandler.SerializeDocuments(EliteDataHandler.OutfittingData)
+);
 
 app.Run();
 

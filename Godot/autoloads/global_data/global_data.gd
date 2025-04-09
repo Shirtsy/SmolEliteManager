@@ -9,6 +9,5 @@ func get_backend_url() -> String:
 	else:
 		print_debug("Web version not detected")
 		url = "https://localhost:7023"
-	url = url + "/weatherforecast"
 	print_debug("URL: " + url)
 	return url
