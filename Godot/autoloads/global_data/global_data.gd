@@ -2,7 +2,13 @@ extends Node
 
 
 func get_backend_url() -> String:
-	if OS.is_debug_build():
-		return "https://localhost:7023/weatherforecast"
+	var url: String
+	if OS.has_feature("web"):
+		print_debug("Web version detected")
+		url = "https://" + JavaScriptBridge.eval("window.location.host;")
 	else:
-		return "/weatherforecast"
+		print_debug("Web version not detected")
+		url = "https://localhost:7023"
+	url = url + "/weatherforecast"
+	print_debug("URL: " + url)
+	return url

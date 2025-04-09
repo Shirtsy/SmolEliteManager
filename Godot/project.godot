@@ -15,7 +15,7 @@ run/main_scene="uid://ir8ypkrvvjis"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 run/low_processor_mode=true
 boot_splash/image="uid://d144oslm40m4d"
-config/icon="res://icon.svg"
+config/icon="uid://d144oslm40m4d"
 boot_splash/minimum_display_time=1000
 
 [autoload]
@@ -39,3 +39,4 @@ project/assembly_name="SmolEliteManager"
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
