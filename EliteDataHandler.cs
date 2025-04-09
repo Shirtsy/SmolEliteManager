@@ -32,24 +32,51 @@ public static class EliteDataHandler
         "Elite Dangerous"
     );
 
-    private static IEnumerable<JsonDocument> ReadJson(string filePath)
+    private static List<JsonDocument> ReadJson(string filePath)
     {
-        if (!File.Exists(filePath)) yield break;
-        yield return JsonDocument.Parse(File.ReadAllText(filePath));
+        try
+        {
+            using var stream = File.OpenRead(filePath);
+            var doc = JsonDocument.Parse(stream);
+            return [doc];
+        }
+        catch (Exception ex) when (ex is IOException or JsonException)
+        {
+            Console.WriteLine($"Error reading or parsing file: {ex.Message}");
+        }
+
+        return [];
     }
 
-    private static IEnumerable<JsonDocument> ReadJsonLines(string filePath)
+    private static List<JsonDocument> ReadJsonLines(string filePath)
     {
-        if (!File.Exists(filePath)) yield break;
+        var results = new List<JsonDocument>();
 
-        using var reader = new StreamReader(filePath);
-        string? line;
-        while ((line = reader.ReadLine()) != null)
+        try
         {
-            if (!string.IsNullOrWhiteSpace(line))
+            using var reader = new StreamReader(filePath);
+            string? line;
+            while ((line = reader.ReadLine()) != null)
             {
-                yield return JsonDocument.Parse(line);
+                if (string.IsNullOrWhiteSpace(line)) continue;
+
+                try
+                {
+                    var doc = JsonDocument.Parse(line);
+                    results.Add(doc);
+                }
+                catch (JsonException ex)
+                {
+                    Console.WriteLine($"Error parsing JSON line: {ex.Message}");
+                }
             }
         }
+        catch (Exception ex) when (ex is IOException)
+        {
+            Console.WriteLine($"Error reading file: {ex.Message}");
+        }
+
+        return results;
     }
+
 }

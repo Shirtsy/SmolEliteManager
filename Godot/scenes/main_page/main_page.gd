@@ -29,7 +29,7 @@ func _on_http_request_request_completed(
 	var body_data: Array = JSON.parse_string(body_text) if body_text != "" else []
 	var new_label: Label = Label.new()
 	new_label.text = body_text
-	$Margin/Panel/Margin/HBox/ScrollContainer2/VBoxContainer.add_child(new_label)
+	$Margin/TabContainer/ScrollContainer2/VBoxContainer.add_child(new_label)
 	request_timer.start()
 
 
