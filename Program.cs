@@ -3,6 +3,9 @@ app.UseHttpsRedirection();
 app.UseDefaultFiles();
 app.UseStaticFiles(new StaticFileOptions { ServeUnknownFileTypes = true });
 
+// Could use images with alpha channel and compare average similarity per-pixel to detect
+// key features on screen to determine which menu it's on
+
 app.MapGet("market", () =>
     EliteDataHandler.SerializeDocuments(EliteDataHandler.MarketData)
 );

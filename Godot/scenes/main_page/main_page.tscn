@@ -32,10 +32,11 @@ theme_override_constants/margin_bottom = 20
 [node name="TabContainer" type="TabContainer" parent="Margin"]
 layout_mode = 2
 theme_override_styles/tab_focus = ExtResource("2_uk4ct")
-current_tab = 0
+current_tab = 1
 tabs_position = 1
 
 [node name="ScrollContainer2" type="ScrollContainer" parent="Margin/TabContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 metadata/_tab_index = 0
@@ -47,8 +48,12 @@ layout_mode = 2
 layout_mode = 2
 text = "Test Text!"
 
+[node name="RichTextLabel" type="RichTextLabel" parent="Margin/TabContainer/ScrollContainer2/VBoxContainer"]
+layout_mode = 2
+focus_mode = 2
+selection_enabled = true
+
 [node name="ScrollContainer3" type="ScrollContainer" parent="Margin/TabContainer"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 metadata/_tab_index = 1

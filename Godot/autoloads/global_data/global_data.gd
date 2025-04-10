@@ -1,7 +1,10 @@
 extends Node
 
 
-func get_backend_url() -> String:
+@onready var backend_url: String = fetch_backend_url()
+
+
+func fetch_backend_url() -> String:
 	var url: String
 	if OS.has_feature("web"):
 		print_debug("Web version detected")
