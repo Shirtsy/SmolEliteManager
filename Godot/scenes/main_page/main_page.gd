@@ -3,8 +3,7 @@ extends Control
 
 @onready var http: HTTPRequest = $HTTPRequest
 @onready var request_timer: Timer = $RequestTimer
-
-var url: String = GlobalData.backend_url
+@onready var url: String = GlobalData.backend_url
 
 
 func _ready() -> void:
