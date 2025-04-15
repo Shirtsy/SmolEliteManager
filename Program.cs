@@ -6,6 +6,8 @@ app.UseStaticFiles(new StaticFileOptions { ServeUnknownFileTypes = true });
 // Could use images with alpha channel and compare average similarity per-pixel to detect
 // key features on screen to determine which menu it's on
 
+Console.WriteLine(ImageComparator.DiffImages("TestFiles\\Test1.png", "TestFiles\\Test2.png"));
+
 app.MapGet("market", () =>
     EliteDataHandler.SerializeDocuments(EliteDataHandler.MarketData)
 );
