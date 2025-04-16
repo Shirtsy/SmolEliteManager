@@ -21,11 +21,12 @@ public static class ImageComparator
 
     private static float DiffPixels(Rgba32 pixelA, Rgba32 pixelB)
     {
-        float rgbDiff = ((pixelA.R - pixelB.R) / 255)
-        + ((pixelA.G - pixelB.G) / 255)
-        + ((pixelA.B - pixelB.B) / 255)
-        / 3;
-        return rgbDiff * (pixelA.A / 255 + pixelB.A / 255);
+        float rDiff = Math.Abs((pixelA.R - pixelB.R) / 255f);
+        float gDiff = Math.Abs((pixelA.G - pixelB.G) / 255f);
+        float bDiff = Math.Abs((pixelA.B - pixelB.B) / 255f);
+        float rgbDiff = (rDiff + gDiff + bDiff) / 3f;
+        float rgbaDiff = rgbDiff * (pixelA.A / 255f) * (pixelB.A / 255f);
+        return rgbaDiff;
     }
 
     private static IEnumerable<TPixel> GetPixels<TPixel>(Image<TPixel> image)
